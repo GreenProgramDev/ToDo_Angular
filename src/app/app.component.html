@@ -1,0 +1,22 @@
+
+
+<h1>{{title}}</h1>
+<div>
+  <input type="text" > <button>Add</button><br>
+  <small>Insira acima sua task</small>
+  <ul>
+    <li *ngFor="let todo of todos">
+      {{todo.id}}- {{todo.task}} | 
+      <input type="checkbox">
+      <button>Remove</button>
+    </li>
+  </ul>
+  <hr>
+  <ul>
+    <li *ngFor="let todo of todosDone">
+      {{todo.id}}- {{todo.task}} | 
+      <input type="checkbox">
+      <button>Remove</button>
+    </li>
+  </ul>
+</div>
