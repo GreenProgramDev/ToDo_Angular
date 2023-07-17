@@ -1,9 +1,9 @@
-import { BooleanLiteral } from "typescript";
 
 export class Todo {
     constructor(
-        public id: Number,
-        public task: String,
-        public done: Boolean,
+        public id: number,
+        public task: string,
+        public done: boolean,
     ) { }
 }
+
