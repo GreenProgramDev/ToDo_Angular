@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  grid-area: h1;
+  text-align: center;
+  margin: 0 0 0.3rem 0;
+}
+.subTitle {
+  height: 1.5rem;
+  display: flex;
+  padding: 0 20%;
+  justify-content: space-between;
+}
+.subTitle p {
+  text-shadow: 2px 2px 5px black;
+}
+.form {
+  margin: 0;
+  padding: 0;
+  border: none;
+  grid-area: form;
+  display: flex;
+  justify-content: center;
+}
+.align {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+li {
+  min-height: 50px;
+  list-style: none;
+  display: grid;
+  justify-content: space-between;
+  padding-left: 3px;
+  grid-template-areas:
+    "text done"
+    "text remove";
+}
+.sec1 li {
+  max-height: 50px;
+  box-shadow: 1px 1px 3px black;
+}
+.sec2 li {
+  max-height: 50px;
+  box-shadow: -1px -1px 3px black;
+}
+.done {
+  grid-area: done;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.sec1,
+.sec2 {
+  margin: 0;
+  padding: 0.5rem;
+  width: 50%;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.sec1 {
+  grid-area: sec1;
+}
+.sec2 {
+  grid-area: sec2;
+}
+
+.remove {
+  grid-area: remove;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.text {
+  grid-area: text;
+  margin: 0.3rem 0;
+}

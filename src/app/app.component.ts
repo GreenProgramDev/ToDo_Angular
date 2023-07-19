@@ -10,61 +10,7 @@ import { Todo } from 'src/models/todo.model';
 export class AppComponent {
   title: string = 'My To Do';
   todos: Todo[] = [];
-  form: FormGroup;
-
   constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      title: [
-        '',
-        Validators.compose([
-          Validators.minLength(3),
-          Validators.maxLength(30),
-          Validators.required,
-        ]),
-      ],
-    });
-    this.load();
   }
-
-  add() {
-    const title = this.form.controls['title'].value;
-    const id = this.todos.length + 1;
-    this.todos.push(new Todo(id, title, false));
-    this.save();
-    this.clear();
-  }
-
-  clear() {
-    this.form.reset();
-  }
-
-  markAsDone(todo: Todo) {
-    todo.done = true;
-    this.save();
-  }
-
-  markAsUndone(todo: Todo) {
-    todo.done = false;
-    this.save();
-  }
-
-  remove(todo: Todo) {
-    const index = this.todos.indexOf(todo);
-    if (index !== -1) {
-      this.todos.splice(index, 1);
-    }
-    this.save();
-  }
-
-  save() {
-    const data = JSON.stringify(this.todos);
-    localStorage.setItem('todos', data);
-  }
-  
-  load() {
-    const data = localStorage.getItem('todos');
-    if (data) {
-      this.todos = JSON.parse(data);
-    }
-  }
+    
 }
